@@ -7,9 +7,9 @@ edition = "2021"
 
 [dependencies]
 yew = "0.19"
-yew_styles = { version="0.11", features=["button", "text", "navbar"] }
 yew-router = "0.16.0"
 yew-hooks = "0.1.42"
 reqwasm = "0.5"
 serde = { version = "1.0", features = ["derive"] }
+stylist = { version = "0.10.0", features = ["yew_integration"] } 
 wasm-bindgen-futures = "0.4"

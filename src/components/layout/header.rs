@@ -1,8 +1,51 @@
 use yew::prelude::*;
+use yew_router::prelude::use_history;
+use yew_router::history::History;
+use stylist::{style, yew::styled_component};
 
-#[function_component(Header)]
+use crate::router::Route;
+
+// #[function_component(Header)]
+#[styled_component(Header)]
 pub fn header() -> Html {
+    let history = use_history().unwrap();
+
+    let onclick_callback = Callback::from(move |_| history.push(Route::Home));
+
+    let stylesheet = style!(
+        r#"
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+            }
+            
+            li {
+                float: left;
+            }
+            
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+            
+            /* Change the link color to #111 (black) on hover */
+            li a:hover {
+                background-color: #111;
+            }
+        "#
+    ).unwrap();
     html!{
-        <h1>{"Header"}</h1>
+        <div class={stylesheet}>
+            <ul>
+                <li><a href="">{"Hello"}</a></li>
+                <li><a href="">{"Home"}</a></li>
+            </ul>
+        </div>
     }
 }
