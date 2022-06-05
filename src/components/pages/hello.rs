@@ -3,6 +3,9 @@ use yew::prelude::*;
 #[function_component(Hello)]
 pub fn hello() -> Html {
     html!{
-        <h1>{"Hello"}</h1>
+        <>
+            <h1>{"Hello"}</h1>
+            <div>{"Hi"}</div>
+        </>
     }
 }

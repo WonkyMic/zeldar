@@ -1,17 +1,11 @@
 use yew::prelude::*;
 use yew_router::prelude::Link;
-// use yew_router::history::History;
 use stylist::{style, yew::styled_component};
 
 use crate::router::Route;
 
-// #[function_component(Header)]
 #[styled_component(Header)]
 pub fn header() -> Html {
-    // let history = use_history().unwrap();
-
-    // let onclick_callback = Callback::from(move |_| history.push(Route::Home));
-
     let stylesheet = style!(
         r#"
             ul {
