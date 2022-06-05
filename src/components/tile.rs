@@ -8,10 +8,39 @@ pub fn tile() -> Html {
             #outline {
                 height: 180px;
                 width: 360px;
-                border: 2px solid #73AD21;
-                border-radius: 25px;
                 padding: 20px;
-                box-shadow: 10px 10px 5px #e1fae2;
+                border-radius: 5px;
+                background-image:
+                    linear-gradient(to left, #316e2f 60% , transparent),
+                    linear-gradient(to left, #316e2f 60% , transparent),
+                    linear-gradient(to right, #316e2f 60% , transparent),
+                    linear-gradient(to right, #316e2f 60% , transparent),
+                    linear-gradient(transparent, #316e2f 60%),
+                    linear-gradient(transparent, #316e2f 60%),
+                    linear-gradient(#316e2f 60%, transparent), 
+                    linear-gradient(#316e2f 60%, transparent);
+                background-size:
+                    4em .5em,
+                    4em .5em,
+                    4em .5em,
+                    4em .5em,
+                    .5em 4em, 
+                    .5em 4em, 
+                    .5em 4em, 
+                    .5em 4em;
+                background-position:
+                    21em 0,
+                    21em 13.25em,
+                    0 13.25em,
+                    0 0,
+                    0 10em,
+                    24.5em 10em,
+                    24.5em 0,
+                    0 0;
+                background-repeat: no-repeat;
+            }
+            #outline:hover {
+                box-shadow: 10px 10px 5px #80a87e;
             }
             #title {
                 text-align: center;
