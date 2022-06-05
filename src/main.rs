@@ -12,11 +12,11 @@ use crate::router::{switch, Route};
 fn app() -> Html {
     html! {
         <>
-            <Header />
             <BrowserRouter>
+                <Header />
                 <Switch<Route> render={Switch::render(switch)} />
+                <Footer />
             </BrowserRouter>
-            <Footer />
         </>
     }
 }

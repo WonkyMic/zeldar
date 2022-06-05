@@ -1,6 +1,6 @@
 use yew::prelude::*;
-use yew_router::prelude::use_history;
-use yew_router::history::History;
+use yew_router::prelude::Link;
+// use yew_router::history::History;
 use stylist::{style, yew::styled_component};
 
 use crate::router::Route;
@@ -8,9 +8,9 @@ use crate::router::Route;
 // #[function_component(Header)]
 #[styled_component(Header)]
 pub fn header() -> Html {
-    let history = use_history().unwrap();
+    // let history = use_history().unwrap();
 
-    let onclick_callback = Callback::from(move |_| history.push(Route::Home));
+    // let onclick_callback = Callback::from(move |_| history.push(Route::Home));
 
     let stylesheet = style!(
         r#"
@@ -38,14 +38,28 @@ pub fn header() -> Html {
             li a:hover {
                 background-color: #111;
             }
+
+            .active { 
+                background-color: #04AA6D;
+            }
         "#
     ).unwrap();
     html!{
         <div class={stylesheet}>
-            <ul>
-                <li><a href="">{"Hello"}</a></li>
-                <li><a href="">{"Home"}</a></li>
-            </ul>
+            <nav class="navbar">
+                <ul>
+                    <li>
+                        <Link<Route> to={Route::Home} classes="nav-link">
+                            { "Home" }
+                        </Link<Route>>
+                    </li>
+                    <li>
+                        <Link<Route> to={Route::Hello} classes="nav-link">
+                            { "Hello" }
+                        </Link<Route>>
+                    </li>
+                </ul>
+            </nav>
         </div>
     }
 }
