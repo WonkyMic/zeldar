@@ -17,12 +17,12 @@ pub fn dashboard() -> Html {
     html!{
         <div class={stylesheet}>
             <div class="grid-container">
-                <Tile />
-                <Tile />
-                <Tile />
-                <Tile />
-                <Tile />
-                <Tile />
+                <Tile title="title0" />
+                <Tile title="title1" />
+                <Tile title="title2" />
+                <Tile title="title3" />
+                <Tile title="title4" />
+                <Tile title="title5" />
             </div>
         </div>
     }

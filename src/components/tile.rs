@@ -1,8 +1,13 @@
 use yew::prelude::*;
 use stylist::{Style, style, yew::styled_component};
 
+#[derive(Properties, Clone, PartialEq)]
+pub struct Props {
+    pub title: String,
+}
+
 #[styled_component(Tile)]
-pub fn tile() -> Html {
+pub fn tile(props: &Props) -> Html {
     let stylesheet: Style = style!(
         r#"
             #outline {
@@ -53,7 +58,7 @@ pub fn tile() -> Html {
     html!{
         <div class={stylesheet}>
             <div id="outline">
-                <div id="title">{"Placeholder Title"}</div>
+                <div id="title">{props.title.clone()}</div>
             </div>
         </div>
     }

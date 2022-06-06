@@ -13,3 +13,6 @@ OR
 ```
 trunk serve --open
 ```
+
+### Resources
+- [Steam Web API Documentation (unofficial)](https://steamapi.xpaw.me/#)
